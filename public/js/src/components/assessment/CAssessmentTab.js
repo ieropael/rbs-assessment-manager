@@ -19,12 +19,26 @@ export class CAssessmentTab {
 
   // метод получения webix-конфигурации компонента
   config() {
+    webix.ui(this.window.config());
     return AssessmentTabView();
   }
 
   // метод инициализации обработчиков событий компонента
   attachEvents() {
+    // инициализация используемых представлений
+    this.view = {
+      datatable: $$('assessmentTabDatatable'),
+      btns: {
+        createBtn: $$('assessmenttab-add-btn'),
+        updateBtn: $$('assessmenttab-edit-btn'),
+        deleteBtn: $$('assessmenttab-remove-btn'),
+      }
+    }
 
+    // создание ассессмента
+    this.view.btns.createBtn.attachEvent('onItemClick', () => {
+      this.createAssessment();
+    })
   }
 
   // функция обновления таблицы ассессментов
@@ -34,7 +48,7 @@ export class CAssessmentTab {
 
   // функция создания ассессмента
   createAssessment() {
-
+    this.window.show();
   }
 
   // функция изменения ассессмента

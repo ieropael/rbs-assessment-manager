@@ -12,14 +12,27 @@ export class CAssessmentWindow {
 
   }
 
-  // метод получения webix конфигурации компонента
+  // метод получения webix-конфигурации компонента
   config() {
     return AssessmentWindowView();
   }
 
   // метод инициализации обработчиков событий компонента
   attachEvents() {
-
+    this.view = {
+      window: $$('assessmentWindow'),
+      windowLabel: $$('assessmentWindowLabel'),
+      windowCancelBtn: $$('assessmentWindowCancelBtn'),
+      windowConfirmBtn: $$('assessmentWindowConfirmBtn'),
+      form: $$('assessmentWindowForm'),
+      formfields: {
+        lastname: $$('assessmentWindowFormLastname'),
+        name: $$('assessmentWindowFormName'),
+        middlename: $$('assessmentWindowFormMiddlename'),
+        position: $$('assessmentWindowFormPosition'),
+        email: $$('assessmentWindowFormEmail'),
+      }
+    }
   }
 
   // метод вызова модального окна

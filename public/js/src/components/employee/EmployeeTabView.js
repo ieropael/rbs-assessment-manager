@@ -1,10 +1,57 @@
 // возвращает webix-конфигурацию таба для работы с сотрудниками
 export function EmployeeTabView() {
+  var employees = [
+    {
+      id: 1,
+      name: 'Виталий',
+      lastname: 'Цаль',
+      middlename: 'Альбертович',
+      position: 'Величайший',
+      email: 'evilarthas@hiddenpool.com',
+      archive: '',
+    },
+    {
+      id: 2,
+      name: 'Виталий',
+      lastname: 'Цаль',
+      middlename: 'Альбертович',
+      position: 'Величайший',
+      email: 'evilarthas@hiddenpool.com',
+      archive: '',
+    },
+    {
+      id: 3,
+      name: 'Виталий',
+      lastname: 'Цаль',
+      middlename: 'Альбертович',
+      position: 'Величайший',
+      email: 'evilarthas@hiddenpool.com',
+      archive: '',
+    },
+    {
+      id: 4,
+      name: 'Виталий',
+      lastname: 'Цаль',
+      middlename: 'Альбертович',
+      position: 'Величайший',
+      email: 'evilarthas@hiddenpool.com',
+      archive: '',
+    },
+    {
+      id: 5,
+      name: 'Виталий',
+      lastname: 'Цаль',
+      middlename: 'Альбертович',
+      position: 'Величайший',
+      email: 'evilarthas@hiddenpool.com',
+      archive: '',
+    },
+  ];
   return {
     id: 'employees',
     view: 'datatable',
     select: true,
-    data: [],
+    data: employees,
     columns: [
       { id: 'id', header: '#', },
       { id: 'lastname', header: 'Фамилия' },

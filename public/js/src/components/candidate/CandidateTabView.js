@@ -1,10 +1,62 @@
 // возвращает webix-конфигурацию таба для работы с кандидатами
 export function CandidateTabView() {
+  var candidates = [
+    {
+      id: 1,
+      name: 'Валерий',
+      lastname: 'Жмышенко',
+      middlename: 'Альбертович',
+      birthday: new Date().toLocaleString(),
+      email: 'zhmyshenko@meatspin.com',
+      status: '',
+      archive: '',
+    },
+    {
+      id: 2,
+      name: 'Валерий',
+      lastname: 'Жмышенко',
+      middlename: 'Альбертович',
+      birthday: new Date().toLocaleString(),
+      email: 'zhmyshenko@meatspin.com',
+      status: '',
+      archive: '',
+    },
+    {
+      id: 3,
+      name: 'Валерий',
+      lastname: 'Жмышенко',
+      middlename: 'Альбертович',
+      birthday: new Date().toLocaleString(),
+      email: 'zhmyshenko@meatspin.com',
+      status: '',
+      archive: '',
+    },
+    {
+      id: 4,
+      name: 'Валерий',
+      lastname: 'Жмышенко',
+      middlename: 'Альбертович',
+      birthday: new Date().toLocaleString(),
+      email: 'zhmyshenko@meatspin.com',
+      status: '',
+      archive: '',
+    },
+    {
+      id: 5,
+      name: 'Валерий',
+      lastname: 'Жмышенко',
+      middlename: 'Альбертович',
+      birthday: new Date().toLocaleString(),
+      email: 'zhmyshenko@meatspin.com',
+      status: '',
+      archive: '',
+    },
+  ];
   return {
     id: 'candidates',
     view: 'datatable',
     select: true,
-    data: [],
+    data: candidates,
     columns: [
       { id: 'id', header: '#', },
       { id: 'lastname', header: 'Фамилия' },

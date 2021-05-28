@@ -1,4 +1,4 @@
-import AssessmentWindowProcessView from './AssessmentWindowProcessView.js';
+import AssessmentWindowProcessView from './AssessmentProcessWindowView.js';
 import assessmentModel from './../../../models/assessmentModel.js';
 import employeeModel from './../../../models/employeeModel.js';
 import candidateModel from './../../../models/candidateModel.js';
