@@ -2,7 +2,7 @@ import { AssessmentTabView } from './AssessmentTabView.js';
 import { CAssessmentWindow } from './assessmentWindow/CAssessmentWindow.js';
 import { CAssessmentProcessWindow } from './assessmentProcessWindow/CAssessmentProcessWindow.js';
 import assessmentModel from '../../models/assessmentModel.js';
-import { Assessement } from '../../models/entities/assessment.js';
+import { Assessment } from '../../models/entities/assessment.js';
 
 // класс таба "Ассессменты"
 export class CAssessmentTab {
@@ -17,9 +17,9 @@ export class CAssessmentTab {
 
   }
 
-  // метод получения webix конфигурации компонента
+  // метод получения webix-конфигурации компонента
   config() {
-
+    return AssessmentTabView();
   }
 
   // метод инициализации обработчиков событий компонента
