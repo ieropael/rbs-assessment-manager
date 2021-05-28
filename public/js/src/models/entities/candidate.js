@@ -3,7 +3,7 @@ export class Candidate {
   constructor(id, name, lastname, middlename, birthday, email, status, archive) {
     this.ID = id
     this.name = name
-    this.firstname = firstname
+    this.lastname = lastname
     this.middlename = middlename
     this.birthday = birthday
     this.email = email

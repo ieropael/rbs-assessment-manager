@@ -1,5 +1,5 @@
 import { CandidateTabView } from './CandidateTabView.js';
-import { CCandidateWindow } from './CandidateWindow/CCandidateWindow.js';
+import { CCandidateWindow } from './candidateWindow/CCandidateWindow.js';
 import candidateModel from '../../models/candidateModel.js';
 import { Candidate } from '../../models/entities/candidate.js';
 
@@ -15,9 +15,9 @@ export class CCandidateTab {
 
   }
 
-  // метод получения webix конфигурации компонента
+  // метод получения webix-конфигурации компонента
   config() {
-
+    return CandidateTabView();
   }
 
   // метод инициализации обработчиков событий компонента
