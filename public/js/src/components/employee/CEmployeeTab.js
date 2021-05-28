@@ -1,7 +1,7 @@
 import { EmployeeTabView } from './EmployeeTabView.js'
 import { CEmployeeWindow } from './employeeWindow/CEmployeeWindow.js'
 import employeeModel from '../../models/employeeModel.js';
-import { Employee } from '../../models/entities/employeejs';
+import { Employee } from '../../models/entities/employee.js';
 
 // класс таба "Сотрудники"
 export class CEmployeeTab {
@@ -15,9 +15,9 @@ export class CEmployeeTab {
 
   }
 
-  // метод получения webix конфигурации компонента
+  // метод получения webix-конфигурации компонента
   config() {
-
+    return EmployeeTabView();
   }
 
   // метод инициализации обработчиков событий компонента
