@@ -61,7 +61,7 @@ export default class Model {
           if (!xhr.response) {
             return;
           }
-          
+
           // валидация статуса ответа сервера
           if (!xhr.response.status) {
             webix.message('Не удалось совершить запрос', 'error');

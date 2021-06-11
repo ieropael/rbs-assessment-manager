@@ -4,12 +4,12 @@ import assessmentModel from './../../../models/assessmentModel.js';
 // компонент окна для работы с сущностью ассессмента
 export class CAssessmentWindow {
   constructor() {
-    this.view       // объект для быстрого доступа к представлениям
+    this.view;       // объект для быстрого доступа к представлениям
   }
 
   // метод инициализации компонента
-  init() {
-
+  init(onChange) {
+    this.onChange = onChange; // callback функция при CUD операциях над книгой
   }
 
   // метод получения webix-конфигурации компонента
@@ -21,18 +21,25 @@ export class CAssessmentWindow {
   attachEvents() {
     this.view = {
       window: $$('assessmentWindow'),
-      windowLabel: $$('assessmentWindowLabel'),
-      windowCancelBtn: $$('assessmentWindowCancelBtn'),
-      windowConfirmBtn: $$('assessmentWindowConfirmBtn'),
-      form: $$('assessmentWindowForm'),
+      windowConfirmBtn: $$('assessmentConfirmBtn'),
+      windowCancelBtn: $$('assessmentCancelBtn'),
+      form: $$('newAssessmentForm'),
       formfields: {
-        lastname: $$('assessmentWindowFormLastname'),
-        name: $$('assessmentWindowFormName'),
-        middlename: $$('assessmentWindowFormMiddlename'),
-        position: $$('assessmentWindowFormPosition'),
-        email: $$('assessmentWindowFormEmail'),
+        theme: $$('inputAssessmentTheme'),
+        date: $$('inputAssessmentDate'),
       }
-    }
+    };
+    this.view.windowConfirmBtn.attachEvent('onItemClick', () => {
+      if (this.view.form.validate()) {
+        assessmentModel.createAssessment(this.fetch());
+        this.view.form.clear();
+        this.onChange();
+        this.hide();
+      }
+    });
+    this.view.windowCancelBtn.attachEvent('onItemClick', () => {
+      this.view.window.hide();
+    });
   }
 
   // метод вызова модального окна
@@ -42,17 +49,17 @@ export class CAssessmentWindow {
 
   // метод отображения окна
   show() {
-
+    this.view.window.show();
   }
 
   // метод сокрытия окна
   hide() {
-
+    this.view.window.hide();
   }
 
   // метод получения сущности из формы окна
   fetch() {
-
+    return this.view.form.getValues();
   }
 
   // метод размещения сущности в форме окна

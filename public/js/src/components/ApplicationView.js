@@ -1,5 +1,5 @@
 // возвращает webix-конфигурацию рабочего пространства приложения
-export default function WorkPlaceView(toolbar, assessmentTab, employeeTab, candidateTab) {
+export function WorkPlaceView(toolbar, assessmentTab, employeeTab, candidateTab) {
   return {
     id: 'workPlace',
     rows: [
@@ -11,6 +11,6 @@ export default function WorkPlaceView(toolbar, assessmentTab, employeeTab, candi
           candidateTab.config(),
         ]
       },
-    ]
+    ],
   }
 }

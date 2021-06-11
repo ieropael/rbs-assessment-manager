@@ -4,7 +4,7 @@ import candidateModel from './../../../models/candidateModel.js'
 // компонент окна для работы с сущностью кандидата
 export class CCandidateWindow {
   constructor() {
-    this.view       // объект для быстрого доступа к представлениям
+    this.view;       // объект для быстрого доступа к представлениям
   }
 
   // метод инициализации компонента
@@ -19,7 +19,9 @@ export class CCandidateWindow {
 
   // метод инициализации обработчиков событий компонента
   attachEvents() {
-
+    this.view = {
+      window: $$('candidateWindow'),
+    }
   }
 
   // метод вызова модального окна
@@ -29,7 +31,7 @@ export class CCandidateWindow {
 
   // метод отображения окна
   show() {
-
+    this.view.window.show();
   }
 
   // метод сокрытия окна

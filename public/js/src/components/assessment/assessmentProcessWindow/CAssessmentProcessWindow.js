@@ -6,7 +6,7 @@ import candidateModel from './../../../models/candidateModel.js';
 // компонент окна для проведения ассессмента
 export class CAssessmentProcessWindow {
   constructor() {
-    this.view       // объект для быстрого доступа к представлениям
+    this.view;       // объект для быстрого доступа к представлениям
   }
 
   // метод инициализации компонента
@@ -21,11 +21,18 @@ export class CAssessmentProcessWindow {
 
   // метод инициализации обработчиков событий компонента
   attachEvents() {
-
+    this.view = {
+      window: $$('assessmentProcessWindow'),
+    }
   }
 
   // функция обновления таблиц
   refreshTable() {
 
+  }
+
+  // метод отображения окна
+  show() {
+    this.view.window.show();
   }
 }

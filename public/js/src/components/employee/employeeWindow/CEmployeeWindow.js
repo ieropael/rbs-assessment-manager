@@ -4,7 +4,7 @@ import employeeModel from './../../../models/employeeModel.js'
 // компонент окна для работы с сущностью сотрудника
 export class CEmployeeWindow {
   constructor() {
-    this.view       // объект для быстрого доступа к представлениям
+    this.view;       // объект для быстрого доступа к представлениям
   }
 
   // метод инициализации компонента
@@ -12,14 +12,16 @@ export class CEmployeeWindow {
 
   }
 
-  // метод получения webix конфигурации компонента
+  // метод получения webix-конфигурации компонента
   config() {
     return EmployeeWindowView();
   }
 
   // метод инициализации обработчиков событий компонента
   attachEvents() {
-
+    this.view = {
+      window: $$('employeeWindow'),
+    }
   }
 
   // метод вызова модального окна
@@ -29,7 +31,7 @@ export class CEmployeeWindow {
 
   // метод отображения окна
   show() {
-
+    this.view.window.show();
   }
 
   // метод сокрытия окна

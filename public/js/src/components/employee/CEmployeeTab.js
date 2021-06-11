@@ -12,17 +12,26 @@ export class CEmployeeTab {
 
   // метод инициализации компонента
   init() {
-
+    this.window = new CEmployeeWindow();
   }
 
   // метод получения webix-конфигурации компонента
   config() {
+    webix.ui(this.window.config());
     return EmployeeTabView();
   }
 
   // метод инициализации обработчиков событий компонента
   attachEvents() {
-
+    // инициализация используемых представлений
+    this.view = {
+      datatable: $$('employees'),
+    };
+    this.window.attachEvents();
+    // создание сотрудника
+    this.view.datatable.on_click['wxi-plus-circle'] = () => {
+      this.createEmployee();
+    };
   }
 
   // функция обновления таблицы сотрудников
@@ -31,12 +40,12 @@ export class CEmployeeTab {
   }
 
   // функция создания сотрудника
-  createCandidate() {
-
+  createEmployee() {
+    this.window.show();
   }
 
   // функция изменения сотрудника
-  updateCandidate() {
+  updateEmployee() {
 
   }
 
